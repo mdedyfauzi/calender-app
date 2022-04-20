@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  justify-content: end;
+  border: 0.1px solid rgb(203, 203, 203);
+}
+
+.disabled {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 0;
+  background: rgb(152, 152, 152);
+  border: 0.1px solid rgb(203, 203, 203);
+
+  p {
+    color: rgb(255, 255, 255);
+  }
+}
+
+.disabled > p:first-child {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+
+.disabled > p:nth-child(2) {
+  height: auto;
+  background-color: aqua;
+}
+
+.disabled > p:nth-child(3) {
+  height: auto;
+  background-color: rgb(21, 255, 0);
+}
+
+.disabled > p:nth-child(4) {
+  height: auto;
+  background-color: rgb(55, 0, 255);
+}
