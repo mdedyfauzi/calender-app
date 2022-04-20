@@ -26,16 +26,22 @@
 }
 
 .disabled > p:nth-child(2) {
-  height: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
   background-color: aqua;
 }
 
 .disabled > p:nth-child(3) {
-  height: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
   background-color: rgb(21, 255, 0);
 }
 
 .disabled > p:nth-child(4) {
-  height: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
   background-color: rgb(55, 0, 255);
 }
