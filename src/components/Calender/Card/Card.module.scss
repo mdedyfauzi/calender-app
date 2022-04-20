@@ -1,14 +1,37 @@
-.card {
-  display: flex;
-  justify-content: end;
-  border: 0.1px solid rgb(203, 203, 203);
-}
-
+.card,
 .disabled {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.card {
+  border: 0.1px solid rgb(203, 203, 203);
+}
+
+.card > p:nth-child(2) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: aqua;
+}
+
+.card > p:nth-child(3) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(21, 255, 0);
+}
+
+.card > p:nth-child(4) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(55, 0, 255);
+}
+
+.disabled {
   z-index: 0;
   background: rgb(152, 152, 152);
   border: 0.1px solid rgb(203, 203, 203);
@@ -18,30 +41,10 @@
   }
 }
 
+.card > p:first-child,
 .disabled > p:first-child {
   position: absolute;
   z-index: 1;
   top: 0;
   right: 0;
-}
-
-.disabled > p:nth-child(2) {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background-color: aqua;
-}
-
-.disabled > p:nth-child(3) {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background-color: rgb(21, 255, 0);
-}
-
-.disabled > p:nth-child(4) {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background-color: rgb(55, 0, 255);
 }

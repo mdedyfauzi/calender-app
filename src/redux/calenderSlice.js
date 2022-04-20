@@ -9,23 +9,43 @@ const calenderSlice = createSlice({
       {
         id: '',
         date: 0,
-        first_event: {
-          name: 'mandi',
-          time: '',
-          email: '',
-        },
-        second_event: {
-          name: 'nyuci',
-          time: '',
-          email: '',
-        },
-        third_event: {
-          name: 'jemur',
-          time: '',
-          email: '',
-        },
+        // first_event: {
+        //   name: 'mandi',
+        //   time: '',
+        //   email: '',
+        // },
+        // second_event: {
+        //   name: 'nyuci',
+        //   time: '',
+        //   email: '',
+        // },
+        // third_event: {
+        //   name: 'jemur',
+        //   time: '',
+        //   email: '',
+        // },
       },
     ],
+    selectedDates: {
+      id: '',
+      date: 0,
+      first_event: {
+        name: '',
+        time: '',
+        email: '',
+      },
+      second_event: {
+        name: '',
+        time: '',
+        email: '',
+      },
+      third_event: {
+        name: '',
+        time: '',
+        email: '',
+      },
+    },
+    isOpen: false,
   },
 
   //create reducers
@@ -42,11 +62,17 @@ const calenderSlice = createSlice({
           };
           state.dates.push(dates);
         }
-        state.isLoading = false;
+      }
+    },
+    setSelectedDates: (state, action) => {
+      if (!state.isOpen) {
+        state.isOpen = true;
+        state.selectedDates.id = action.payload.id;
+        state.selectedDates.date = action.payload.date;
       }
     },
   },
 });
 
-export const { setDates } = calenderSlice.actions;
+export const { setDates, setSelectedDates } = calenderSlice.actions;
 export default calenderSlice.reducer;

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setDates } from '../../redux/calenderSlice';
+import { setDates, setSelectedDates } from '../../redux/calenderSlice';
 
 import Card from './Card/Card';
 import styles from './Calender.module.scss';
@@ -40,6 +40,7 @@ const Calender = () => {
               event1={item.first_event === undefined ? undefined : item.first_event.name}
               event2={item.second_event === undefined ? undefined : item.second_event.name}
               event3={item.third_event === undefined ? undefined : item.third_event.name}
+              onClick={() => dispatch(setSelectedDates(item))}
             />
           ))}
       </section>

@@ -1,7 +1,11 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import { useState } from 'react';
 import styles from './EventForm.module.scss';
 
 const EventForm = () => {
+  const dispatch = useDispatch();
+
   const [values, setValues] = useState({
     name: '',
     time: undefined,
