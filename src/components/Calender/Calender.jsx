@@ -32,17 +32,7 @@ const Calender = () => {
         <p>Sunday</p>
       </header>
       <section className={styles.calender}>
-        {!isLoading &&
-          calender.map((item, index) => (
-            <Card
-              key={item.id}
-              day={item.date}
-              event1={item.first_event === undefined ? undefined : item.first_event.name}
-              event2={item.second_event === undefined ? undefined : item.second_event.name}
-              event3={item.third_event === undefined ? undefined : item.third_event.name}
-              onClick={() => dispatch(setSelectedDates(item))}
-            />
-          ))}
+        {!isLoading && calender.map((item, index) => <Card key={item.id} day={item.date} event={item.event === undefined ? undefined : item.event} onClick={() => dispatch(setSelectedDates(item))} />)}
       </section>
     </div>
   );

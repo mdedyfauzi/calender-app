@@ -9,41 +9,13 @@ const calenderSlice = createSlice({
       {
         id: '',
         date: 0,
-        first_event: {
-          name: '',
-          time: '',
-          email: '',
-        },
-        second_event: {
-          name: '',
-          time: '',
-          email: '',
-        },
-        third_event: {
-          name: '',
-          time: '',
-          email: '',
-        },
+        event: [],
       },
     ],
     selectedDates: {
       id: '',
       date: 0,
-      first_event: {
-        name: '',
-        time: '',
-        email: '',
-      },
-      second_event: {
-        name: '',
-        time: '',
-        email: '',
-      },
-      third_event: {
-        name: '',
-        time: '',
-        email: '',
-      },
+      event: [],
     },
     isOpen: false,
   },
@@ -60,21 +32,7 @@ const calenderSlice = createSlice({
           let dates = {
             id: 'day' + (i + 1),
             date: action.payload[i],
-            first_event: {
-              name: '',
-              time: '',
-              email: '',
-            },
-            second_event: {
-              name: '',
-              time: '',
-              email: '',
-            },
-            third_event: {
-              name: '',
-              time: '',
-              email: '',
-            },
+            event: [],
           };
           state.dates.push(dates);
         }
@@ -85,10 +43,14 @@ const calenderSlice = createSlice({
         state.isOpen = true;
         state.selectedDates.id = action.payload.id;
         state.selectedDates.date = action.payload.date;
+        state.selectedDates.event = action.payload.event;
       }
+    },
+    setEvent: (state, action) => {
+      state.setSelectedDates.event.push(action.payload);
     },
   },
 });
 
-export const { setDates, setSelectedDates } = calenderSlice.actions;
+export const { setDates, setSelectedDates, setEvent } = calenderSlice.actions;
 export default calenderSlice.reducer;
