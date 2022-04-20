@@ -9,21 +9,21 @@ const calenderSlice = createSlice({
       {
         id: '',
         date: 0,
-        // first_event: {
-        //   name: 'mandi',
-        //   time: '',
-        //   email: '',
-        // },
-        // second_event: {
-        //   name: 'nyuci',
-        //   time: '',
-        //   email: '',
-        // },
-        // third_event: {
-        //   name: 'jemur',
-        //   time: '',
-        //   email: '',
-        // },
+        first_event: {
+          name: '',
+          time: '',
+          email: '',
+        },
+        second_event: {
+          name: '',
+          time: '',
+          email: '',
+        },
+        third_event: {
+          name: '',
+          time: '',
+          email: '',
+        },
       },
     ],
     selectedDates: {
@@ -51,6 +51,7 @@ const calenderSlice = createSlice({
   //create reducers
   reducers: {
     setDates: (state, action) => {
+      //If statment created to prevent reducer to be executed twice because the useEffect unintentionally got called twice
       if ((state.dates.length = 1)) {
         state.dates[0].date = action.payload[0];
         state.dates[0].id = 'day1';
@@ -59,6 +60,21 @@ const calenderSlice = createSlice({
           let dates = {
             id: 'day' + (i + 1),
             date: action.payload[i],
+            first_event: {
+              name: '',
+              time: '',
+              email: '',
+            },
+            second_event: {
+              name: '',
+              time: '',
+              email: '',
+            },
+            third_event: {
+              name: '',
+              time: '',
+              email: '',
+            },
           };
           state.dates.push(dates);
         }
