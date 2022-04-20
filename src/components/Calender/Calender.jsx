@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setDates, setSelectedDates } from '../../redux/calenderSlice';
 
 import Card from './Card/Card';
 import styles from './Calender.module.scss';
-import { useEffect, useState } from 'react';
 
 const CalenderDates = require('./calenderDates');
 

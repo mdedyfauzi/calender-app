@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { useState } from 'react';
 import styles from './EventForm.module.scss';
 
 const EventForm = () => {
@@ -20,7 +20,7 @@ const EventForm = () => {
   };
 
   const handleSubmit = (e) => {
-    alert('A name was submitted: ' + this.state.value);
+    // alert('A name was submitted: ' + this.state.value);
     e.preventDefault();
   };
 
